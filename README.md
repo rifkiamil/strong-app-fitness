@@ -34,3 +34,6 @@ Note that killing a process can potentially cause data loss or other unexpected 
 
 ## Deployment
 gcloud functions deploy
+
+## Git
+### Conventional Commits framwork https://www.conventionalcommits.org/
