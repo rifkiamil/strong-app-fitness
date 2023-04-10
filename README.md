@@ -26,7 +26,7 @@ kill {pid}
 
 1.4. This command will send a signal to the process with PID 97116 to terminate it. If the process does not respond to the signal, you can use the -9 option with the kill command to force the process to terminate:
 
-kill -9 97116
+kill -9 {pid}
 
 This command will send a "SIGKILL" signal to the process with PID 97116, which will immediately terminate it.
 
@@ -37,6 +37,7 @@ gcloud functions deploy
 
 ## Git
 ### Conventional Commits framwork https://www.conventionalcommits.org/
+<<<<<<< HEAD
 
 ## Manual Task 
 
@@ -49,3 +50,5 @@ SELECT
   string_field_3
 FROM
   `rifkiamil-strong-00-dev.raw.temp_exercise_type`;
+=======
+>>>>>>> 9abcd01ee1bb2223d3d5d1f7fba65bcbe57abd07
