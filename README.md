@@ -37,3 +37,15 @@ gcloud functions deploy
 
 ## Git
 ### Conventional Commits framwork https://www.conventionalcommits.org/
+
+## Manual Task 
+
+### Create the execrise_type list
+INSERT INTO `rifkiamil-strong-00-dev.raw.execrise_type` (exercise, upper_Lower_body, target_area, cardio_intensity)
+SELECT
+  string_field_0,
+  string_field_1,
+  string_field_2,
+  string_field_3
+FROM
+  `rifkiamil-strong-00-dev.raw.temp_exercise_type`;

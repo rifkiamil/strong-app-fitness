@@ -1,1 +1,4 @@
+db-dtypes
 functions-framework
+google-cloud-bigquery
+pandas
