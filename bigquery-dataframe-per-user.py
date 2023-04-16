@@ -1,6 +1,23 @@
 from google.cloud import bigquery
 import pandas as pd
 from datetime import datetime, timezone
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Scatterpolar(
+  r=[1, 5, 2, 2, 3],
+  theta=['processing cost','mechanical properties','chemical stability', 'thermal stability',
+           'device integration'],
+  fill='toself'
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True
+    ),
+  ),
+  showlegend=False
+)
 
 
 # Set your Google Cloud project ID
@@ -27,7 +44,7 @@ LEFT OUTER JOIN
 ON
   u.Exercise_Name = e.exercise
 WHERE
-  batch_id = 21
+  batch_id = 11
 """
 
 pd.set_option("display.max_columns", 20)
@@ -102,3 +119,5 @@ if len(lower_body_df) > 0:
     print(bottom_3_workouts.to_string())
 else:
     print("No Lower body exercises found in DataFrame.")
+
+fig.show()
