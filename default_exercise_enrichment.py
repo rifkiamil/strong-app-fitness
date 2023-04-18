@@ -5,13 +5,13 @@ import json
 
 from datetime import datetime, timezone
 
-# Set your Google Cloud project ID
+# Set Google Cloud project ID
 project_id = "rifkiamil-strong-00-dev"
 
-# Set your Google Cloud JSON key file
+# Set Google Cloud JSON key file
 key_file = "keyfile/keyfile.json"
 
-# Set up your OpenAI API key
+# Set OpenAI API key
 with open("keyfile/chatgpt.json", "r") as file:
     data = json.load(file)
     openai.api_key = data["private_key_id"]
@@ -23,7 +23,6 @@ table_id = "default_exercise"
 # Initialize the BigQuery client
 client = bigquery.Client.from_service_account_json(key_file, project=project_id)
 
-# Define the SQL query
 sql = f"""SELECT
   default_exercise_id,
   default_app_id,
@@ -33,7 +32,6 @@ FROM
   `rifkiamil-strong-00-dev.raw.default_exercise`
 """
 
-# Execute the query and get the result
 query_job = client.query(sql)
 result = query_job.result()
 
